@@ -1,5 +1,5 @@
 //
-//  CachedImageViewModel.swift
+//  UrlImageViewModel.swift
 //  Directly
 //
 //  Created by Greg Hubbard on 2/11/23.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class CachedImageViewModel: ObservableObject {
+class UrlImageViewModel: ObservableObject {
     @Published var image: UIImage?
     var urlString: String?
     var imageCache = ImageCache.getImageCache()

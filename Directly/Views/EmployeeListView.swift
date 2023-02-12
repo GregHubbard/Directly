@@ -14,21 +14,27 @@ struct EmployeeListView: View {
         NavigationView {
             List(employees, id: \.uuid) { employee in
                 
-                NavigationLink {
-                    VStack {
-                        CachedImageView(urlString: employee.photoUrlLarge, size: 100)
-                        Text(employee.fullName)
-                    }
-                } label: {
+                VStack(alignment: .leading) {
                     HStack {
-                        CachedImageView(urlString: employee.photoUrlSmall, size: 60)
+                        CachedImageView(urlString: employee.photoUrlSmall)
                             .padding(.trailing, 10)
+                        VStack(alignment: .leading) {
+                            Text(employee.fullName)
+                                .font(.headline)
+                            Text(employee.team)
+                                .font(.subheadline)
+                        }
                         
-                        Text(employee.fullName)
+                        Spacer()
+                        
+                        EmployeeTypeView(employee.employeeType)
                     }
                 }
             }
             .task {
+                await loadData()
+            }
+            .refreshable {
                 await loadData()
             }
             .navigationTitle("Directory")

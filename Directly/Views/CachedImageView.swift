@@ -8,31 +8,31 @@
 import SwiftUI
 
 struct CachedImageView: View {
-    @ObservedObject var viewModel: CachedImageViewModel
-    let size: CGFloat
+    @ObservedObject var urlImageViewModel: UrlImageViewModel
+    let size: CGFloat = 60
     
-    init(urlString: String?, size: CGFloat) {
-        viewModel = CachedImageViewModel(urlString: urlString)
-        self.size = size
+    init(urlString: String?) {
+        urlImageViewModel = UrlImageViewModel(urlString: urlString)
     }
     
     var body: some View {
-        if viewModel.image != nil {
-            Image(uiImage: viewModel.image!)
+        if urlImageViewModel.image != nil {
+            Image(uiImage: urlImageViewModel.image!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: size, height: size)
                 .clipShape(Circle())
         } else {
             Circle()
+                .fill(.gray.gradient)
+                .opacity(0.3)
                 .frame(width: size)
-                .foregroundColor(.gray)
         }
     }
 }
 
 struct CachedImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CachedImageView(urlString: nil, size: 100)
+        CachedImageView(urlString: nil)
     }
 }
