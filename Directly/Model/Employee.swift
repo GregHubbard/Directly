@@ -2,41 +2,46 @@
 //  Employee.swift
 //  Directly
 //
-//  Created by Greg Hubbard on 2/11/23.
+//  Created by Greg Hubbard on 2/12/23.
 //
 
 import Foundation
 
-struct Employee: Codable {
+struct Employee {
     let uuid: String
     let fullName: String
-    let phoneNumber: String?
-    let emailAddress: String
     let biography: String?
     let photoUrlSmall: String?
     let photoUrlLarge: String?
     let team: String
     let employeeType: EmployeeType
+    let contactInfo: [ContactInfo]
     
-    enum CodingKeys: String, CodingKey {
-        case uuid
-        case fullName = "full_name"
-        case phoneNumber = "phone_number"
-        case emailAddress = "email_address"
-        case biography
-        case photoUrlSmall = "photo_url_small"
-        case photoUrlLarge = "photo_url_large"
-        case team
-        case employeeType = "employee_type"
+    static var example: Employee {
+        return Employee(uuid: "0d8fcc12-4d0c-425c-8355-390b312b909c",
+                        fullName: "Justine Mason",
+                        biography: "",
+                        photoUrlSmall: "https://s3.amazonaws.com/sq-mobile-interview/photos/16c00560-6dd3-4af4-97a6-d4754e7f2394/small.jpg",
+                        photoUrlLarge: "",
+                        team: "Point of Sale",
+                        employeeType: EmployeeType.FULL_TIME,
+                        contactInfo: [ContactInfo(type: ContactInfoType.EMAIL, value: "jmason.demo@squareup.com"),
+                                      ContactInfo(type: ContactInfoType.PHONE, value: "(555) 328-0123")])
     }
 }
 
-enum EmployeeType: String, Codable {
-    case FULL_TIME = "FULL_TIME"
-    case PART_TIME = "PART_TIME"
-    case CONTRACTOR = "CONTRACTOR"
+struct ContactInfo {
+    let type: ContactInfoType
+    let value: String
 }
 
-struct Response: Codable {
-    let employees: [Employee]
+enum ContactInfoType {
+    case PHONE
+    case EMAIL
+}
+
+extension String {
+    public func toPhoneNumber() -> String {
+        return self.replacingOccurrences(of: "(\\d{3})(\\d{3})(\\d+)", with: "($1) $2-$3", options: .regularExpression, range: nil)
+    }
 }

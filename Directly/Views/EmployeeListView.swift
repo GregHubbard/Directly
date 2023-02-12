@@ -13,31 +13,23 @@ struct EmployeeListView: View {
     var body: some View {
         NavigationView {
             List(employees, id: \.uuid) { employee in
-                
-                VStack(alignment: .leading) {
-                    HStack {
-                        CachedImageView(urlString: employee.photoUrlSmall)
-                            .padding(.trailing, 10)
-                        VStack(alignment: .leading) {
-                            Text(employee.fullName)
-                                .font(.headline)
-                            Text(employee.team)
-                                .font(.subheadline)
-                        }
-                        
-                        Spacer()
-                        
-                        EmployeeTypeView(employee.employeeType)
+                DisclosureGroup {
+                    ForEach(employee.contactInfo, id: \.value) { contactInfo in
+                        ContactInfoView(contactInfo)
+                            .padding(.leading, 50)
                     }
+                } label: {
+                    EmployeeRowView(employee)
                 }
             }
+            .tint(.indigo)
             .task {
                 await loadData()
             }
             .refreshable {
                 await loadData()
             }
-            .navigationTitle("Directory")
+            .navigationTitle("Directly")
         }
     }
     
@@ -51,7 +43,18 @@ struct EmployeeListView: View {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decodedResponse = try JSONDecoder().decode(Response.self, from: data)
-            employees = decodedResponse.employees.sorted { $0.fullName < $1.fullName }
+            let employeesJSON = decodedResponse.employees.sorted { $0.fullName < $1.fullName }
+            var employees = [Employee]()
+            for employeeJson in employeesJSON {
+                var contactInfo = [ContactInfo]()
+                contactInfo.append(ContactInfo(type: ContactInfoType.EMAIL, value: employeeJson.emailAddress))
+                if let phoneNumber = employeeJson.phoneNumber {
+                    contactInfo.append(ContactInfo(type: ContactInfoType.PHONE, value: phoneNumber.toPhoneNumber()))
+                }
+                let employee = Employee(uuid: employeeJson.uuid, fullName: employeeJson.fullName, biography: employeeJson.biography, photoUrlSmall: employeeJson.photoUrlSmall, photoUrlLarge: employeeJson.photoUrlLarge, team: employeeJson.team, employeeType: employeeJson.employeeType, contactInfo: contactInfo)
+                employees.append(employee)
+            }
+            self.employees = employees
         } catch {
             print(error)
         }

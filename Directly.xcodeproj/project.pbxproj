@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		092FCD7429980FD000A74BE8 /* EmployeeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092FCD7329980FD000A74BE8 /* EmployeeTypeView.swift */; };
+		0937F89A2999445F00D0D9D8 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0937F8992999445F00D0D9D8 /* Employee.swift */; };
 		0941153D2997289800D776D8 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941153C2997289800D776D8 /* CachedImageView.swift */; };
-		094115402997D99700D776D8 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941153F2997D99700D776D8 /* Employee.swift */; };
+		094115402997D99700D776D8 /* EmployeeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941153F2997D99700D776D8 /* EmployeeJSON.swift */; };
 		094115432997DB6A00D776D8 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094115422997DB6A00D776D8 /* ImageCache.swift */; };
 		094115462997DD4800D776D8 /* UrlImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094115452997DD4800D776D8 /* UrlImageViewModel.swift */; };
+		095CFBFB29995809009D0093 /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095CFBFA29995809009D0093 /* ContactInfoView.swift */; };
+		09CB2B99299959FC006F0203 /* EmployeeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09CB2B98299959FC006F0203 /* EmployeeRowView.swift */; };
 		09D5E4562995A36C007D7602 /* DirectlyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5E4552995A36C007D7602 /* DirectlyApp.swift */; };
 		09D5E4582995A36C007D7602 /* EmployeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D5E4572995A36C007D7602 /* EmployeeListView.swift */; };
 		09D5E45A2995A36D007D7602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09D5E4592995A36D007D7602 /* Assets.xcassets */; };
@@ -19,11 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		092FCD7329980FD000A74BE8 /* EmployeeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTypeView.swift; sourceTree = "<group>"; };
+		0937F8992999445F00D0D9D8 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		0941153C2997289800D776D8 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
-		0941153F2997D99700D776D8 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		0941153F2997D99700D776D8 /* EmployeeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeJSON.swift; sourceTree = "<group>"; };
 		094115422997DB6A00D776D8 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		094115452997DD4800D776D8 /* UrlImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageViewModel.swift; sourceTree = "<group>"; };
+		095CFBFA29995809009D0093 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
+		09CB2B98299959FC006F0203 /* EmployeeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRowView.swift; sourceTree = "<group>"; };
 		09D5E4522995A36C007D7602 /* Directly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D5E4552995A36C007D7602 /* DirectlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectlyApp.swift; sourceTree = "<group>"; };
 		09D5E4572995A36C007D7602 /* EmployeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListView.swift; sourceTree = "<group>"; };
@@ -45,7 +49,8 @@
 		0941153E2997D98600D776D8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0941153F2997D99700D776D8 /* Employee.swift */,
+				0937F8992999445F00D0D9D8 /* Employee.swift */,
+				0941153F2997D99700D776D8 /* EmployeeJSON.swift */,
 				094115422997DB6A00D776D8 /* ImageCache.swift */,
 			);
 			path = Model;
@@ -55,8 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				09D5E4572995A36C007D7602 /* EmployeeListView.swift */,
+				09CB2B98299959FC006F0203 /* EmployeeRowView.swift */,
 				0941153C2997289800D776D8 /* CachedImageView.swift */,
-				092FCD7329980FD000A74BE8 /* EmployeeTypeView.swift */,
+				095CFBFA29995809009D0093 /* ContactInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,10 +182,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09CB2B99299959FC006F0203 /* EmployeeRowView.swift in Sources */,
 				094115432997DB6A00D776D8 /* ImageCache.swift in Sources */,
+				0937F89A2999445F00D0D9D8 /* Employee.swift in Sources */,
 				09D5E4582995A36C007D7602 /* EmployeeListView.swift in Sources */,
-				094115402997D99700D776D8 /* Employee.swift in Sources */,
-				092FCD7429980FD000A74BE8 /* EmployeeTypeView.swift in Sources */,
+				094115402997D99700D776D8 /* EmployeeJSON.swift in Sources */,
+				095CFBFB29995809009D0093 /* ContactInfoView.swift in Sources */,
 				0941153D2997289800D776D8 /* CachedImageView.swift in Sources */,
 				094115462997DD4800D776D8 /* UrlImageViewModel.swift in Sources */,
 				09D5E4562995A36C007D7602 /* DirectlyApp.swift in Sources */,
