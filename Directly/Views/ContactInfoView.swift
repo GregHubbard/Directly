@@ -14,9 +14,9 @@ struct ContactInfoView: View {
     init(_ contactInfo: ContactInfo) {
         self.contactInfo = contactInfo
         switch contactInfo.type {
-        case ContactInfoType.PHONE:
+        case .phone:
             icon = "phone.circle"
-        case ContactInfoType.EMAIL:
+        case .email:
             icon = "envelope.circle"
         }
     }
@@ -35,8 +35,8 @@ struct ContactInfoView: View {
 struct ContactInfoView_Previews: PreviewProvider {
     static var previews: some View {
         VStack(alignment: .leading, spacing: 5) {
-            ContactInfoView(ContactInfo(type: ContactInfoType.EMAIL, value: "e@email.com"))
-            ContactInfoView(ContactInfo(type: ContactInfoType.PHONE, value: "(123) 456-7890"))
+            ContactInfoView(ContactInfo(type: .email, value: "e@email.com"))
+            ContactInfoView(ContactInfo(type: .phone, value: "(123) 456-7890"))
         }
     }
 }

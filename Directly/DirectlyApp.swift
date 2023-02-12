@@ -11,7 +11,7 @@ import SwiftUI
 struct DirectlyApp: App {
     var body: some Scene {
         WindowGroup {
-            EmployeeListView()
+            ContentView()
         }
     }
 }

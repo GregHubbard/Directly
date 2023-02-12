@@ -15,14 +15,21 @@ struct EmployeeRowView: View {
     }
     
     var body: some View {
-        HStack {
-            CachedImageView(urlString: employee.photoUrlSmall)
-                .padding(.trailing, 10)
-            VStack(alignment: .leading) {
-                Text(employee.fullName)
-                    .font(.headline)
-                Text(employee.team)
-                    .font(.subheadline)
+        DisclosureGroup {
+            ForEach(employee.contactInfo, id: \.value) { contactInfo in
+                ContactInfoView(contactInfo)
+                    .padding(.leading, 50)
+            }
+        } label: {
+            HStack {
+                CachedImageView(urlString: employee.photoUrlSmall)
+                    .padding(.trailing, 10)
+                VStack(alignment: .leading) {
+                    Text(employee.fullName)
+                        .font(.headline)
+                    Text(employee.team)
+                        .font(.subheadline)
+                }
             }
         }
     }
@@ -30,6 +37,8 @@ struct EmployeeRowView: View {
 
 struct EmployeeRowView_Previews: PreviewProvider {
     static var previews: some View {
-        EmployeeRowView(Employee.example)
+        List {
+            EmployeeRowView(Employee.example)
+        }
     }
 }
