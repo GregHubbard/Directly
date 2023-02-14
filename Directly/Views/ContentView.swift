@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var vm = EmployeeViewModel()
+    @StateObject var imgCache = ImageCacheViewModel()
     
     var body: some View {
         NavigationStack {
@@ -27,11 +28,12 @@ struct ContentView: View {
             }
             .tint(.indigo)
             .task {
-                await vm.loadData()
+                await vm.loadData(url: UrlConstant.normal)
             }
             .navigationTitle("Directly")
         }
         .environmentObject(vm)
+        .environmentObject(imgCache)
     }
 }
 

@@ -20,7 +20,7 @@ struct EmployeeListView: View {
                 EmployeeRowView(employee)
             }
             .refreshable {
-                await vm.loadData()
+                await vm.loadData(url: UrlConstant.normal)
             }
         }
     }

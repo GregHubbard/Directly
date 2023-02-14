@@ -11,10 +11,11 @@ import SwiftUI
 class UrlImageViewModel: ObservableObject {
     @Published var image: UIImage?
     var urlString: String?
-    var imageCache = ImageCache.getImageCache()
+    var imageCache: ImageCacheViewModel
     
-    init(urlString: String? = nil) {
+    init(urlString: String? = nil, imageCache: ImageCacheViewModel) {
         self.urlString = urlString
+        self.imageCache = imageCache
         loadImage()
     }
     

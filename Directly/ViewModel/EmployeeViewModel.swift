@@ -15,8 +15,8 @@ class EmployeeViewModel: ObservableObject {
         self.state = .loading
     }
     
-    func loadData() async {
-        guard let url = URL(string: "https://s3.amazonaws.com/sq-mobile-interview/employees.json") else {
+    func loadData(url: URL?) async {
+        guard let url = url else {
             self.state = .error
             print("Invalid url")
             return

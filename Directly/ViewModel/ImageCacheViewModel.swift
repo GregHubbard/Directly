@@ -1,5 +1,5 @@
 //
-//  ImageCache.swift
+//  ImageCacheViewModel.swift
 //  Directly
 //
 //  Created by Greg Hubbard on 2/11/23.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class ImageCache {
+class ImageCacheViewModel: ObservableObject {
     var cache = NSCache<NSString, UIImage>()
     
     func get(forKey: String) -> UIImage? {
@@ -17,12 +17,5 @@ class ImageCache {
     
     func set(forKey: String, image: UIImage) {
         cache.setObject (image, forKey: NSString(string: forKey))
-    }
-}
-
-extension ImageCache {
-    private static var imageCache = ImageCache()
-    static func getImageCache() -> ImageCache {
-        return imageCache
     }
 }

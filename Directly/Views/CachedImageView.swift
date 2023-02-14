@@ -11,8 +11,8 @@ struct CachedImageView: View {
     @ObservedObject var urlImageViewModel: UrlImageViewModel
     let size: CGFloat = 60
     
-    init(urlString: String?) {
-        urlImageViewModel = UrlImageViewModel(urlString: urlString)
+    init(urlString: String?, imageCache: ImageCacheViewModel) {
+        urlImageViewModel = UrlImageViewModel(urlString: urlString, imageCache: imageCache)
     }
     
     var body: some View {
@@ -33,6 +33,6 @@ struct CachedImageView: View {
 
 struct CachedImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CachedImageView(urlString: nil)
+        CachedImageView(urlString: nil, imageCache: ImageCacheViewModel())
     }
 }

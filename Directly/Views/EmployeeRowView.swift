@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EmployeeRowView: View {
+    @EnvironmentObject var imgCache: ImageCacheViewModel
     private let employee: Employee
     
     init(_ employee: Employee) {
@@ -22,7 +23,7 @@ struct EmployeeRowView: View {
             }
         } label: {
             HStack {
-                CachedImageView(urlString: employee.photoUrlSmall)
+                CachedImageView(urlString: employee.photoUrlSmall, imageCache: imgCache)
                     .padding(.trailing, 10)
                 VStack(alignment: .leading) {
                     Text(employee.fullName)
