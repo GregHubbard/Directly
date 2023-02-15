@@ -17,8 +17,8 @@ class EmployeeViewModel: ObservableObject {
     
     func loadData(url: URL?) async {
         guard let url = url else {
+            //Invalid url
             self.state = .error
-            print("Invalid url")
             return
         }
         
@@ -34,7 +34,6 @@ class EmployeeViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self.state = .error
             }
-            print(error)
         }
     }
     

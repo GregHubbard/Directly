@@ -52,6 +52,7 @@
 		0976853F299C26BE00493838 /* DirectlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectlyTests.swift; sourceTree = "<group>"; };
 		0976854A299D4D2900493838 /* employeeJsonNormal.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = employeeJsonNormal.json; sourceTree = "<group>"; };
 		0976854C299D563F00493838 /* employeeJsonMalformed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = employeeJsonMalformed.json; sourceTree = "<group>"; };
+		0976854E299D91E900493838 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		09CB2B98299959FC006F0203 /* EmployeeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeRowView.swift; sourceTree = "<group>"; };
 		09D5E4522995A36C007D7602 /* Directly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Directly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D5E4552995A36C007D7602 /* DirectlyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectlyApp.swift; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		09D5E4492995A36C007D7602 = {
 			isa = PBXGroup;
 			children = (
+				0976854E299D91E900493838 /* README.md */,
 				09D5E4542995A36C007D7602 /* Directly */,
 				0976853E299C26BE00493838 /* DirectlyTests */,
 				09D5E4532995A36C007D7602 /* Products */,

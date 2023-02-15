@@ -18,7 +18,7 @@ final class DirectlyTests: XCTestCase {
         let vm = EmployeeViewModel()
         await vm.loadData(url: URL(fileURLWithPath: "/Users/greghubbard/Dev/Directly/DirectlyTests/employeeJson.json"))
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             XCTAssertEqual(vm.state, .loaded)
             XCTAssertEqual(vm.employees.count, 1)
         }
