@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Employee: Identifiable {
+struct Employee: Identifiable, Equatable {
     let id: UUID
     let fullName: String
     let biography: String?
@@ -18,19 +18,22 @@ struct Employee: Identifiable {
     let contactInfo: [ContactInfo]
     
     static var example: Employee {
-        return Employee(id: UUID(),
-                        fullName: "Justine Mason",
-                        biography: "",
-                        photoUrlSmall: "https://s3.amazonaws.com/sq-mobile-interview/photos/16c00560-6dd3-4af4-97a6-d4754e7f2394/small.jpg",
-                        photoUrlLarge: "",
-                        team: "Point of Sale",
-                        employeeType: .fullTime,
-                        contactInfo: [ContactInfo(type: .email, value: "jmason.demo@squareup.com"),
-                                      ContactInfo(type: .phone, value: "(555) 328-0123")])
+        return Employee(
+            id: UUID(),
+            fullName: "Justine Mason",
+            biography: "",
+            photoUrlSmall: "https://s3.amazonaws.com/sq-mobile-interview/photos/16c00560-6dd3-4af4-97a6-d4754e7f2394/small.jpg",
+            photoUrlLarge: "",
+            team: "Point of Sale",
+            employeeType: .fullTime,
+            contactInfo: [
+                ContactInfo(type: .email, value: "jmason.demo@squareup.com"),
+                ContactInfo(type: .phone, value: "(555) 328-0123")
+            ])
     }
 }
 
-struct ContactInfo {
+struct ContactInfo: Equatable {
     let type: ContactInfoType
     let value: String
 }

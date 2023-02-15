@@ -38,7 +38,7 @@ class EmployeeViewModel: ObservableObject {
         }
     }
     
-    private func convert(_ employeesJSON: [EmployeeJSON]) -> [Employee] {
+    internal func convert(_ employeesJSON: [EmployeeJSON]) -> [Employee] {
         var employees = [Employee]()
         for employeeJson in employeesJSON {
             let uuid = UUID(uuidString: employeeJson.uuid)!
