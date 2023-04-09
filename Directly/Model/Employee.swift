@@ -21,9 +21,9 @@ struct Employee: Identifiable, Equatable {
         return Employee(
             id: UUID(),
             fullName: "Justine Mason",
-            biography: "",
+            biography: "Engineer on the Point of Sale team.",
             photoUrlSmall: "https://s3.amazonaws.com/sq-mobile-interview/photos/16c00560-6dd3-4af4-97a6-d4754e7f2394/small.jpg",
-            photoUrlLarge: "",
+            photoUrlLarge: "https://s3.amazonaws.com/sq-mobile-interview/photos/16c00560-6dd3-4af4-97a6-d4754e7f2394/large.jpg",
             team: "Point of Sale",
             employeeType: .fullTime,
             contactInfo: [

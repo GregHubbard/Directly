@@ -14,6 +14,11 @@
 		094115402997D99700D776D8 /* EmployeeJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0941153F2997D99700D776D8 /* EmployeeJSON.swift */; };
 		094115432997DB6A00D776D8 /* ImageCacheViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094115422997DB6A00D776D8 /* ImageCacheViewModel.swift */; };
 		094115462997DD4800D776D8 /* UrlImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094115452997DD4800D776D8 /* UrlImageViewModel.swift */; };
+		094381A529B8DCC500B6BDD0 /* Directly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 094381A329B8DCC500B6BDD0 /* Directly.xcdatamodeld */; };
+		094381A729B8DDA500B6BDD0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094381A629B8DDA500B6BDD0 /* DataController.swift */; };
+		094381A929B8EA7800B6BDD0 /* EmployeeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094381A829B8EA7800B6BDD0 /* EmployeeDetailView.swift */; };
+		094381AB29B8F09800B6BDD0 /* EmployeeTypeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094381AA29B8F09800B6BDD0 /* EmployeeTypeBadge.swift */; };
+		094381AD29B8F2A100B6BDD0 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094381AC29B8F2A100B6BDD0 /* State.swift */; };
 		095CFBFB29995809009D0093 /* ContactInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095CFBFA29995809009D0093 /* ContactInfoView.swift */; };
 		09768540299C26BE00493838 /* DirectlyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0976853F299C26BE00493838 /* DirectlyTests.swift */; };
 		09768547299C272000493838 /* EmployeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093B880929996A7B00DDE762 /* EmployeeViewModel.swift */; };
@@ -47,6 +52,11 @@
 		0941153F2997D99700D776D8 /* EmployeeJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeJSON.swift; sourceTree = "<group>"; };
 		094115422997DB6A00D776D8 /* ImageCacheViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheViewModel.swift; sourceTree = "<group>"; };
 		094115452997DD4800D776D8 /* UrlImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageViewModel.swift; sourceTree = "<group>"; };
+		094381A429B8DCC500B6BDD0 /* Directly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Directly.xcdatamodel; sourceTree = "<group>"; };
+		094381A629B8DDA500B6BDD0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		094381A829B8EA7800B6BDD0 /* EmployeeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailView.swift; sourceTree = "<group>"; };
+		094381AA29B8F09800B6BDD0 /* EmployeeTypeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTypeBadge.swift; sourceTree = "<group>"; };
+		094381AC29B8F2A100B6BDD0 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		095CFBFA29995809009D0093 /* ContactInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoView.swift; sourceTree = "<group>"; };
 		0976853D299C26BE00493838 /* DirectlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DirectlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0976853F299C26BE00493838 /* DirectlyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectlyTests.swift; sourceTree = "<group>"; };
@@ -86,6 +96,8 @@
 				0937F8992999445F00D0D9D8 /* Employee.swift */,
 				0941153F2997D99700D776D8 /* EmployeeJSON.swift */,
 				0917A436299C1EB10043A6B9 /* UrlConstant.swift */,
+				094381A329B8DCC500B6BDD0 /* Directly.xcdatamodeld */,
+				094381AC29B8F2A100B6BDD0 /* State.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -95,6 +107,8 @@
 			children = (
 				09D5E4572995A36C007D7602 /* ContentView.swift */,
 				09DB2F1F29997FF50021564E /* EmployeeListView.swift */,
+				094381A829B8EA7800B6BDD0 /* EmployeeDetailView.swift */,
+				094381AA29B8F09800B6BDD0 /* EmployeeTypeBadge.swift */,
 				09CB2B98299959FC006F0203 /* EmployeeRowView.swift */,
 				0941153C2997289800D776D8 /* CachedImageView.swift */,
 				095CFBFA29995809009D0093 /* ContactInfoView.swift */,
@@ -108,6 +122,7 @@
 				093B880929996A7B00DDE762 /* EmployeeViewModel.swift */,
 				094115452997DD4800D776D8 /* UrlImageViewModel.swift */,
 				094115422997DB6A00D776D8 /* ImageCacheViewModel.swift */,
+				094381A629B8DDA500B6BDD0 /* DataController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -282,10 +297,15 @@
 				094115402997D99700D776D8 /* EmployeeJSON.swift in Sources */,
 				095CFBFB29995809009D0093 /* ContactInfoView.swift in Sources */,
 				0941153D2997289800D776D8 /* CachedImageView.swift in Sources */,
+				094381AB29B8F09800B6BDD0 /* EmployeeTypeBadge.swift in Sources */,
+				094381A729B8DDA500B6BDD0 /* DataController.swift in Sources */,
 				094115462997DD4800D776D8 /* UrlImageViewModel.swift in Sources */,
 				09DB2F2029997FF50021564E /* EmployeeListView.swift in Sources */,
 				0917A437299C1EB10043A6B9 /* UrlConstant.swift in Sources */,
 				093B880A29996A7B00DDE762 /* EmployeeViewModel.swift in Sources */,
+				094381AD29B8F2A100B6BDD0 /* State.swift in Sources */,
+				094381A929B8EA7800B6BDD0 /* EmployeeDetailView.swift in Sources */,
+				094381A529B8DCC500B6BDD0 /* Directly.xcdatamodeld in Sources */,
 				09D5E4562995A36C007D7602 /* DirectlyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +560,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		094381A329B8DCC500B6BDD0 /* Directly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				094381A429B8DCC500B6BDD0 /* Directly.xcdatamodel */,
+			);
+			currentVersion = 094381A429B8DCC500B6BDD0 /* Directly.xcdatamodel */;
+			path = Directly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 09D5E44A2995A36C007D7602 /* Project object */;
 }

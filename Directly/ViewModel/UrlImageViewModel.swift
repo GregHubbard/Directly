@@ -12,10 +12,12 @@ class UrlImageViewModel: ObservableObject {
     @Published var image: UIImage?
     var urlString: String?
     var imageCache: ImageCacheViewModel
+    @Published var state: State
     
     init(urlString: String? = nil, imageCache: ImageCacheViewModel) {
         self.urlString = urlString
         self.imageCache = imageCache
+        self.state = .loading
         loadImage()
     }
     
@@ -46,7 +48,7 @@ class UrlImageViewModel: ObservableObject {
         }
         
         let url = URL(string: urlString)!
-        let task = URLSession.shared.dataTask(with: url, completionHandler: getImageFromResponse(data: response: error: ))
+        let task = URLSession.shared.dataTask(with: url, completionHandler: getImageFromResponse(data:response:error:))
         task.resume()
     }
     
@@ -65,6 +67,7 @@ class UrlImageViewModel: ObservableObject {
             
             self.imageCache.set(forKey: self.urlString!, image: loadedImage)
             self.image = loadedImage
+            self.state = .loaded
         }
     }
 }

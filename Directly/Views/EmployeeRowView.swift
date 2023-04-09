@@ -16,11 +16,8 @@ struct EmployeeRowView: View {
     }
     
     var body: some View {
-        DisclosureGroup {
-            ForEach(employee.contactInfo, id: \.value) { contactInfo in
-                ContactInfoView(contactInfo)
-                    .padding(.leading, 50)
-            }
+        NavigationLink {
+            EmployeeDetailView(employee: employee)
         } label: {
             HStack {
                 CachedImageView(urlString: employee.photoUrlSmall, imageCache: imgCache)
@@ -33,6 +30,7 @@ struct EmployeeRowView: View {
                 }
             }
         }
+
     }
 }
 

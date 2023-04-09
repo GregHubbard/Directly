@@ -9,24 +9,29 @@ import SwiftUI
 
 struct CachedImageView: View {
     @ObservedObject var urlImageViewModel: UrlImageViewModel
-    let size: CGFloat = 60
+    let size: CGFloat
     
-    init(urlString: String?, imageCache: ImageCacheViewModel) {
+    init(urlString: String?, imageCache: ImageCacheViewModel, size: CGFloat = 60) {
         urlImageViewModel = UrlImageViewModel(urlString: urlString, imageCache: imageCache)
+        self.size = size
     }
     
     var body: some View {
-        if urlImageViewModel.image != nil {
+        if urlImageViewModel.state == .loaded {
             Image(uiImage: urlImageViewModel.image!)
                 .resizable()
                 .scaledToFill()
                 .frame(width: size, height: size)
                 .clipShape(Circle())
         } else {
-            Circle()
-                .fill(.gray.gradient)
-                .opacity(0.3)
-                .frame(width: size)
+            ZStack {
+                Circle()
+                    .fill(.gray.gradient)
+                    .opacity(0.3)
+                    .frame(width: size)
+                
+                ProgressView()
+            }
         }
     }
 }

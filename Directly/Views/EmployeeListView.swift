@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EmployeeListView: View {
     @EnvironmentObject var vm: EmployeeViewModel
+    @Environment(\.managedObjectContext) var context
     
     var body: some View {
         if vm.employees.count == 0 {
@@ -20,7 +21,7 @@ struct EmployeeListView: View {
                 EmployeeRowView(employee)
             }
             .refreshable {
-                await vm.loadData(url: UrlConstant.normal)
+                await vm.loadFromInternet(url: UrlConstant.normal, context: context)
             }
         }
     }
